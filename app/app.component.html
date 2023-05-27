@@ -7,10 +7,19 @@
   <!-- If you want to see the chart, set visibility to "visible" -->
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
-      <div id="chart" style="visibility: visible">
+      <div id="chart-section1">
         <table>
           <tr>
+            <td
+              colspan="2"
+              style="background-color: #075e7d; color: white; padding: 10px"
+            >
+              <h1>i-Hub S.A. - Natural Persons overview</h1>
+            </td>
+          </tr>
+          <tr>
             <td>
+              <strong>Chart Title 1</strong>
               <ngx-charts-bar-horizontal-2d
                 [view]="viewHidden"
                 [results]="multi"
@@ -26,6 +35,7 @@
               </ngx-charts-bar-horizontal-2d>
             </td>
             <td>
+              <strong>Chart Title 2</strong>
               <ngx-charts-bar-horizontal-2d
                 [view]="viewHidden"
                 [results]="multi"
@@ -43,8 +53,70 @@
           </tr>
           <tr>
             <td>
+              <strong>Chart Title 3</strong>
               <ngx-charts-pie-chart
-                [view]="[500, 500]"
+                [view]="[500, 200]"
+                [results]="single"
+                [legend]="true"
+                [explodeSlices]="false"
+                [labels]="true"
+                [doughnut]="false"
+              >
+              </ngx-charts-pie-chart>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div id="chart-section2">
+        <table>
+          <tr>
+            <td
+              colspan="2"
+              style="background-color: #075e7d; color: white; padding: 10px"
+            >
+              <h1>i-Hub S.A. - Natural Persons overview</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Chart Title 1</strong>
+              <ngx-charts-bar-horizontal-2d
+                [view]="viewHidden"
+                [results]="multi"
+                [legend]="true"
+                [xAxis]="xAxis"
+                [yAxis]="yAxis"
+                [showGridLines]="showGridLines"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+              >
+              </ngx-charts-bar-horizontal-2d>
+            </td>
+            <td>
+              <strong>Chart Title 2</strong>
+              <ngx-charts-bar-horizontal-2d
+                [view]="viewHidden"
+                [results]="multi"
+                [legend]="true"
+                [xAxis]="xAxis"
+                [yAxis]="yAxis"
+                [showGridLines]="showGridLines"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+              >
+              </ngx-charts-bar-horizontal-2d>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Chart Title 3</strong>
+              <ngx-charts-pie-chart
+                [view]="[500, 200]"
                 [results]="single"
                 [legend]="true"
                 [explodeSlices]="false"
