@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <button (click)="downloadChart()">Download pie chart as PDF</button>
+    </div>
+  </div>
+  
+
+  <!--Hidden charts-->
+
+  <!-- If you want to see the chart, set visibility to "visible" -->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div id="chart" style="visibility: visible">
+        <ngx-charts-bar-horizontal-2d
+          [view]="[800, 500]"
+          [results]="multi"
+          [legend]="true"
+      >
+        </ngx-charts-bar-horizontal-2d>
+      </div>
+    </div>
+  </div>
+</div>
+
+
