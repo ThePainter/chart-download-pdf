@@ -4,23 +4,59 @@
       <button (click)="downloadChart()">Download pie chart as PDF</button>
     </div>
   </div>
-  
-
-  <!--Hidden charts-->
-
   <!-- If you want to see the chart, set visibility to "visible" -->
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div id="chart" style="visibility: visible">
-        <ngx-charts-bar-horizontal-2d
-          [view]="[800, 500]"
-          [results]="multi"
-          [legend]="true"
-      >
-        </ngx-charts-bar-horizontal-2d>
+        <table>
+          <tr>
+            <td>
+              <ngx-charts-bar-horizontal-2d
+                [view]="viewHidden"
+                [results]="multi"
+                [legend]="true"
+                [xAxis]="xAxis"
+                [yAxis]="yAxis"
+                [showGridLines]="showGridLines"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+              >
+              </ngx-charts-bar-horizontal-2d>
+            </td>
+            <td>
+              <ngx-charts-bar-horizontal-2d
+                [view]="viewHidden"
+                [results]="multi"
+                [legend]="true"
+                [xAxis]="xAxis"
+                [yAxis]="yAxis"
+                [showGridLines]="showGridLines"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+              >
+              </ngx-charts-bar-horizontal-2d>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ngx-charts-pie-chart
+                [view]="[500, 500]"
+                [results]="single"
+                [legend]="true"
+                [explodeSlices]="false"
+                [labels]="true"
+                [doughnut]="false"
+              >
+              </ngx-charts-pie-chart>
+            </td>
+            <td></td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
 </div>
-
-

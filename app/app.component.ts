@@ -15,17 +15,19 @@ export class AppComponent {
   multi: any[];
   docDefinition: any;
 
-  view: any[] = [700, 400];
+  view: any[] = [800, 400];
+  viewHidden: any[] = [500, 200];
 
   // options
-  showXAxis = true;
-  showYAxis = true;
+  xAxis = true;
+  yAxis = true;
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  xAxisLabel = 'Population';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  yAxisLabel = 'Country';
+  showGridLines = false;
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
@@ -46,7 +48,7 @@ export class AppComponent {
       // Charts are now rendered
       const chart = document.getElementById('chart');
       html2canvas(chart, {
-        height: 500,
+        height: 1000,
         width: 1000,
         scale: 3,
         backgroundColor: null,
@@ -99,7 +101,7 @@ export class AppComponent {
     console.log(event);
   }
 
-  rederBarChart() {
+  /*rederBarChart() {
     html2canvas(document.getElementById('barChart'), { height: 500 }).then(
       (canvas) => {
         document.body.appendChild(canvas);
@@ -113,15 +115,9 @@ export class AppComponent {
     }).then((canvas) => {
       document.body.appendChild(canvas);
     });
-  }
+  }*/
 
   downloadChart() {
-    let rectElements = Array.from(document.getElementsByTagName('rect'));
-    if (rectElements.length > 0) {
-      rectElements.forEach((rect) => {
-        rect.setAttribute('fill', '#ffffff');
-      });
-    }
     // Download PDF
     if (this.docDefinition) {
       pdfMake.createPdf(this.docDefinition).download('chartToPdf' + '.pdf');
