@@ -118,6 +118,29 @@ export class AppComponent {
       defaultStyle: {
         // alignment: 'justify'
       },
+      footer: function (currentPage, pageCount) {
+        return currentPage.toString() + ' of ' + pageCount;
+      },
+      header: function (currentPage, pageCount, pageSize) {
+        // you can apply any logic and return any valid pdfmake element
+        return [
+          {
+            margin: 10,
+            columns: [
+                {
+                    // usually you would use a dataUri instead of the name for client-side printing
+                    // sampleImage.jpg however works inside playground so you can play with it
+                    image: 'sampleImage.jpg',
+                    width: 40
+                },
+                {
+                    margin: [10, 0, 0, 0],
+                    text: 'Here goes the rest'
+                }
+            ]
+          }
+        ];
+      },
     };
   }
 }
