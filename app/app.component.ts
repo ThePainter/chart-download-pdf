@@ -49,7 +49,6 @@ export class AppComponent {
     this.generatePDFHeader();
     await this.insertChartSection('chart-section1', 'after');
     await this.insertChartSection('chart-section2', null);
-    console.log(this.docDefinition.content);
     // Download PDF
     if (this.docDefinition) {
       pdfMake
@@ -75,7 +74,6 @@ export class AppComponent {
       backgroundColor: null,
       logging: false,
     }).then((canvas) => {
-      console.log('YES');
       // Get chart data so we can append to the pdf
       const chartData = canvas.toDataURL();
       // Push image of the chart
