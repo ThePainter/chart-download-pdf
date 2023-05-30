@@ -129,7 +129,7 @@ export class AppComponent {
             margin: 10,
             columns: [
               {
-                text: currentPage.toString() + ' of ' + pageCount,
+                text: currentPage.toString() + ' / ' + pageCount,
                 style: 'rightme',
               },
             ],
